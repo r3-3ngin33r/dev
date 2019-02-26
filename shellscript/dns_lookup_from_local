@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#author:@r33
+#email:r33ngin33r@gmail.com
+#github:github.com/r3-3ngin33r
+#creation: feb262019
+#description: an improved scan script based on dns_lookup_ad.sh@paranoidninja 
+
+
+localIP=$(hostname -I)
+
+octet1=$(echo ${localIP} | tr "." " " | awk '{ print $1 }')
+octet2=$(echo ${localIP} | tr "." " " | awk '{ print $2 }')
+octet3=$(echo ${localIP} | tr "." " " | awk '{ print $3 }')
+octet4=$(echo ${localIP} | tr "." " " | awk '{ print $4 }')
+
+
+x="0"
+y="0"
+z="0"
+
+#Iterate dumbly over all the possibilities from local IP (octet1.x.y.z)
+while [ $x -lt "255" ]
+do
+	while [ $y -lt "255" ]
+	do
+		while [ $z -lt "255"  ]
+		do
+			nslookup $octet1.$x.$y.$z | grep -v "NXDOMAIN" | grep name | cut -f1,3 -d" "
+			i=$[ $i+1  ]
+		done
+	done
+done
