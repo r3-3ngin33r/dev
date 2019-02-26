@@ -1,0 +1,5 @@
+4
+pow 2 3
+cmp 1 2
+join_with coder best the are you ,
+capitalize_first_and_join first second third

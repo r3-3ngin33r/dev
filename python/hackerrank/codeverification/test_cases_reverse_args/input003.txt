@@ -1,0 +1,5 @@
+4
+pow 5 4
+cmp 70 71
+join_with a b c d ,
+capitalize_first_and_join  winkie willie wee

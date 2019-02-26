@@ -1,0 +1,5 @@
+4
+pow 5 2
+cmp 15 3
+join_with deck burning the on stood boy the ,
+capitalize_first_and_join not is that capitalized is this
